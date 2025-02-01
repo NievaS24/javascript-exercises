@@ -1,17 +1,12 @@
 const fibonacci = function(number) {
     number = parseInt(number)
-    if (number < 0) {
-        return "OOPS";
-    } else if (number == 1) {
-        return 1;
-    }
-    let currentNum = 1;
-    let prevNum = 0;
-    let result = 0;
+    if (number < 0) return "OOPS";
+    if (number == 1) return 1;
+    let currentNum = 1, prevNum = 0, result = 0;
     for (let i = 1; i < number; i++) {
-        result = currentNum + prevNum;  // 1 - 2 - 3
-        prevNum = currentNum; // 1 - 1 -2
-        currentNum = result; // 1 - 2 - 3
+        result = currentNum + prevNum;
+        prevNum = currentNum;
+        currentNum = result;
     }
     return result;
 };
